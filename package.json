@@ -78,12 +78,7 @@
     "typescript": "^4.9.3"
   },
   "scripts": {
-    "test": "c8 mocha test",
-    "test-debug": "mocha --inspect-brk test",
-    "test-w": "mocha --watch --parallel --reporter=min --watch-files='lib/**/*.js,test/**/*.js' test test/integration",
-    "integration": "mocha test/integration",
-    "coverage": "c8 report --reporter=text-lcov |codecov --pipe",
-    "lint": "eslint lib"
+    "nps": "nps"
   },
   "engines": {
     "node": ">= v14.15.0"
