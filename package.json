@@ -1,6 +1,6 @@
 {
   "name": "passport-reddit",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Reddit authentication strategy for Passport.",
   "type": "module",
   "keywords": [
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/slotos/passport-reddit.git"
+    "url": "git@github.com:r1oga/passport-reddit.git"
   },
   "bugs": {
-    "url": "http://github.com/slotos/passport-reddit/issues"
+    "url": "https://github.com/r1oga/passport-reddit/issues"
   },
   "author": {
     "name": "Jared Hanson",
@@ -33,6 +33,11 @@
       "name": "Brian Partridge",
       "email": "contact@brianpartridge.com",
       "url": "http://brianpartridge.com/"
+    },
+    {
+      "name": "r1oga",
+      "email": "r1oga@tuta.io",
+      "url": "https://github.com/r1oga"
     }
   ],
   "licenses": [
@@ -41,7 +46,14 @@
       "url": "http://www.opensource.org/licenses/MIT"
     }
   ],
-  "main": "./lib/passport-reddit",
+  "main": "./dist/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "module": "./dist/mjs/index.js",
   "dependencies": {
     "passport-oauth2": "^1.6"
   },
@@ -59,9 +71,11 @@
     "method-override": "^3.x",
     "mocha": "*",
     "nock": "*",
+    "nps": "^5.10.0",
     "passport": "*",
     "sinon": "*",
-    "supertest": "*"
+    "supertest": "*",
+    "typescript": "^4.9.3"
   },
   "scripts": {
     "test": "c8 mocha test",

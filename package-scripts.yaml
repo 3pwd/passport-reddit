@@ -1,0 +1,16 @@
+scripts:
+  test:
+    default: c8 mocha test
+    debug: mocha --inspect-brk test
+    watch: mocha --watch --parallel --reporter=min --watch-files='lib/**/*.js,test/**/*.js' test test/integration
+    integration: mocha test/integration
+    lint: eslint lib
+
+  clean: rm -rf dist
+
+  build:
+    default: nps clean build.esm build.cjs fixup
+    cjs: tsc -p tsconfig.cjs.json
+    esm: tsc -p tsconfig.esm.json
+
+  fixup: ./fixup.sh
