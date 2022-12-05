@@ -11,3 +11,6 @@ examples/login/package-lock.json
 coverage/
 test/coverage.html
 .coveralls.yml
+
+.idea
+dist
