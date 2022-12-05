@@ -1,6 +1,6 @@
 {
-  "name": "passport-reddit",
-  "version": "1.0.0",
+  "name": "@r1oga/passport-reddit",
+  "version": "0.0.0-development",
   "description": "Reddit authentication strategy for Passport.",
   "keywords": [
     "passport",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:r1oga/passport-reddit.git"
+    "url": "https://github.com/r1oga/passport-reddit.git"
   },
   "bugs": {
     "url": "https://github.com/r1oga/passport-reddit/issues"
@@ -75,15 +75,22 @@
     "nock": "*",
     "nps": "^5.10.0",
     "passport": "*",
+    "semantic-release": "^19.0.5",
     "sinon": "*",
     "supertest": "*",
     "typescript": "^4.9.3"
   },
   "scripts": {
     "prepack": "nps build",
-    "nps": "nps"
+    "nps": "nps",
+    "semantic-release": "semantic-release"
   },
-  "engines": {
-    "node": ">= v14.15.0"
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
   }
 }
