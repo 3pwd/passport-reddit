@@ -9,8 +9,10 @@ scripts:
   clean: rm -rf dist
 
   build:
-    default: nps clean build.esm build.cjs fixup
+    default: nps clean build.esm build.cjs
     cjs: tsc -p tsconfig.cjs.json
-    esm: tsc -p tsconfig.esm.json
+    esm: tsc -p tsconfig.esm.json && mv dist/esm/index.js dist/esm/index.mjs
 
   fixup: ./fixup.sh
+
+  prepack: nps build
